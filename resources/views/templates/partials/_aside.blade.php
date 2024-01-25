@@ -1,7 +1,7 @@
 <aside class="w-full md:w-1/4 p-4">
         <!-- Formulaire de Recherche Full Texte -->
         <form
-          action="/recherche-texte"
+          action="{{ route('search') }}"
           method="GET"
           class="bg-gray-700 rounded-lg shadow-lg p-4 mb-6"
         >

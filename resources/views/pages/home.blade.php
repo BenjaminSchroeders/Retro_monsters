@@ -8,9 +8,14 @@
   @include('monstres._random', [
     'monstres' => \App\Models\Monster::inRandomOrder()->limit(1)->get(),
 ])
+<section class="mb-20">
+    <h2 class="text-2xl font-bold mb-4 creepster">
+        Derniers monstres ajoutés
+    </h2>
 @include('monstres._index', [
     'monstres' => \App\Models\Monster::orderBy('created_at', 'DESC')->limit(3)->get(),
 ])
+</section>
 @auth
     @php
           $followedUsers = auth()->user()->following()->pluck('following_id');
