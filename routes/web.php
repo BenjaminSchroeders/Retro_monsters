@@ -62,6 +62,10 @@ Route::get('/user/deck', function () {
 /* Route follow d'un users  */
 Route::post('/route-abonnement', [UserController::class, 'toggleFollow'])->name('route-abonnement');
 
+Route::post('/toggle-favorite-monster', [MonsterController::class, 'toggleFavorite'])->name('toggle-favorite-monster');
+
+
+
 
 /* -------------------- Routes Monstres---------------------- */
 

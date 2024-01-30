@@ -72,4 +72,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notation::class);
     }
+
+    public function favoriteMonsters()
+{
+    return $this->belongsToMany(Monster::class, 'favorites');
+}
 }

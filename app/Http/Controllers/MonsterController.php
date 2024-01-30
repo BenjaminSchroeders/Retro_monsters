@@ -112,5 +112,20 @@ public function delete($id)
     return redirect()->route('liste.perso')->with('success', 'Monstre supprimé avec succès.');
 }
 
+public function toggleFavorite(Request $request)
+{
+    $monster = Monster::findOrFail($request->monster_id);
+    $user = auth()->user();
+
+    if ($user->favoriteMonsters()->where('monster_id', $monster->id)->exists()) {
+        $user->favoriteMonsters()->detach($monster->id);
+        return response()->json(['isFavorited' => false]);
+    } else {
+        $user->favoriteMonsters()->attach($monster->id);
+        return response()->json(['isFavorited' => true]);
+    }
+}
+
+
 
 }
