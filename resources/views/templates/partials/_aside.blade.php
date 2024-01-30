@@ -1,4 +1,3 @@
-<aside class="w-full md:w-1/4 p-4">
         <!-- Formulaire de Recherche Full Texte -->
         <form
           action="{{ route('search') }}"
@@ -116,4 +115,3 @@
             Appliquer les filtres
           </button>
         </form>
-      </aside>

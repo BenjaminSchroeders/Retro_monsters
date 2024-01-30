@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MonsterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,7 @@ Route::get('/', function () {
 /* -------------------- Routes Users---------------------- */
 
 /* Route index users  */
-Route::get('/createurs', function () {
+Route::get('/users', function () {
     return view('users.index');
 })->name('users.index');
 
@@ -57,6 +58,9 @@ Route::get('/user/deck', function () {
         'monstres' => $monstresFavoris
     ]);
 })->name('users.deck');
+
+/* Route follow d'un users  */
+Route::post('/route-abonnement', [UserController::class, 'toggleFollow'])->name('route-abonnement');
 
 
 /* -------------------- Routes Monstres---------------------- */

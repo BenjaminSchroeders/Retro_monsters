@@ -24,7 +24,7 @@
 ])
 
         </div>
-        <div class="text-center">
+        <div class="text-center mt-5">
             {{-- <a href="{{ route('utilisateurs.edit', [
                 'id' => $utilisateur->id,
             ]) }}" class="inline-block text-white bg-blue-500 hover:bg-blue-700 rounded-full px-6 py-2 transition-colors duration-300 mr-4">Modifier</a> --}}
